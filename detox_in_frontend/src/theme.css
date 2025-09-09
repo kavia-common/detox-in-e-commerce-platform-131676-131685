@@ -1,0 +1,341 @@
+/* DETOX-IN Theme Variables */
+:root {
+  --color-primary: #3EBC5C;
+  --color-secondary: #282C34;
+  --color-accent: #F7CA18;
+  --color-text: #1B1B1B;
+  --color-muted: #6b7280;
+  --color-bg: #ffffff;
+  --color-bg-soft: #f5f7f9;
+  --radius: 12px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 6px 24px rgba(0,0,0,0.08);
+  --container: 1200px;
+}
+
+/* Base reset and typography */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  backdrop-filter: saturate(1.5) blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-primary), #27a048);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-title {
+  color: var(--color-secondary);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.4px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.nav a, .nav button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--color-secondary);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav a.active {
+  background: var(--color-bg-soft);
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-bg-soft);
+  border-radius: 12px;
+  padding: 8px 12px;
+  color: var(--color-secondary);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.primary {
+  background: var(--color-primary);
+  color: white !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.secondary {
+  background: var(--color-secondary);
+  color: white !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Hero/Search */
+.hero {
+  background: linear-gradient(180deg, rgba(62,188,92,0.07), transparent);
+  padding: 24px 0 8px;
+}
+
+.searchbar {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.searchbar input, .searchbar select {
+  flex: 1;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.searchbar button {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/* Grid and cards */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (min-width: 900px) { .grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (min-width: 1200px) { .grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+
+.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: #eef5ef;
+}
+
+.badge {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: var(--color-accent);
+  color: #1a1a1a;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-body {
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.card-desc {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price-main {
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.price-sub {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.qty-control {
+  display: inline-flex;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.qty-control button {
+  padding: 8px 12px;
+  background: var(--color-bg-soft);
+  border: none;
+  cursor: pointer;
+}
+
+.qty-control input {
+  width: 48px;
+  text-align: center;
+  border: none;
+  outline: none;
+  padding: 8px;
+}
+
+/* Layout: content + cart drawer */
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .page {
+    grid-template-columns: 1fr 340px;
+    align-items: start;
+  }
+}
+
+.drawer {
+  position: sticky;
+  top: 84px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+}
+
+.empty {
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.line {
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+  margin: 12px 0;
+}
+
+/* Forms */
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.input {
+  display: grid;
+  gap: 6px;
+}
+
+.input label {
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.input input, .input select, .input textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  outline: none;
+}
+
+.helper {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.error {
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+.success {
+  color: #166534;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Table-like list */
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  padding: 24px 0;
+  background: var(--color-bg-soft);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  color: var(--color-secondary);
+}
