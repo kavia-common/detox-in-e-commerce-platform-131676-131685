@@ -1,0 +1,4 @@
+{
+    "command": "PORT=<port> HOST=<host> BROWSER=none npm start",
+    "working_directory": "/home/kavia/workspace/code-generation/detox-in-e-commerce-platform-131676-131685/detox_in_frontend"
+}
